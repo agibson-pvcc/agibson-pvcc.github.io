@@ -1,0 +1,207 @@
+<!--
+Aaron Gibson
+Chapter 1 Program
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chapter 1: Terms & Information</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);   
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;        
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #111; 
+            width: calc(100% - 80px);
+            margin: 20px;             
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            counter-reset: row; 
+        }        
+
+        td {
+            color: rgb(71, 0, 138);
+            background-color: rgb(147, 189, 255);
+            border: 0.5px solid white;
+            padding: 10px 15px;
+            text-align: left;
+            vertical-align: top;
+            box-shadow: 0 0 5px white, 0 0 10px rgb(0, 0, 0);
+        }
+
+        /* Automatically number each row in the table */
+        tr.row-item td::before {
+            counter-increment: row;
+            content: counter(row) ". ";
+            display: inline-block;
+            width: 2.2em;
+            text-align: right;
+            margin-right: 8px;
+            font-weight: bold;
+            color: rgb(71, 0, 138);
+        }
+
+        ol {
+            margin: 5px 0 15px 25px;
+            padding: 0;
+        }
+
+        ul {
+            margin: 5px 0 10px 40px; 
+            padding-left: 20px;       
+        }
+        
+
+        strong {
+            font-size: 120%;
+        }
+
+        .title {
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+            font-size: 160%;
+            margin-top: 10px;
+        }
+
+        .name{
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <tr><td class="title">Chapter 1: An Introduction to Computer Science</td></tr>
+        <tr><td class="name">Student: Aaron Gibson</td></tr>
+    </table>
+
+    <table>
+        <tr><td><strong>Three Misconceptions about Computer Science:</strong></td></tr>
+        <tr class="row-item"><td>It's only about programming.</td></tr>
+        <tr class="row-item"><td>You need a Master's Degree in Mathematics.</td></tr>
+        <tr class="row-item"><td>Computer Science will inevitably create a real life Skynet.</td></tr>
+    </table>
+
+    <table>
+        <tr><td><strong>Briefly define:</strong></td></tr>
+        <tr class="row-item"><td>Computer Science:
+            <ul><li>The study of computers and computational systems.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Algorithm:
+            <ul><li>A procedure for solving a mathematical problem in a finite number of steps that frequently involves repetition of an operation; broadly: 
+                                a step-by-step method for accomplishing some task.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Sequential Operation:
+            <ul><li>A sequential instruction carries out a single well- defined task. When that task is finished, the algorithm moves on to the 
+                                next operation. Sequential operations are usually expressed as simple declarative sentences.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Conditional Operation:
+            <ul><li>These are the "question-asking" instructions of an algorithm. They ask a question, and the next operation is then selected
+                                on the basis of the answer to that question.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Iterative Operation:
+            <ul><li>These are the "looping" instructions of an algorithm.
+                                They tell us not to go on to the next instruction but, instead, to go back
+                                and repeat the execution of a previous block of instructions.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Stored Program Computer:
+            <ul><li>Von Neumann proposed that the instructions that control the operation
+                                of the computer be encoded as binary values and stored internally in the
+                                memory unit along with the data. To solve a new problem, instead of rewiring
+                                the machine, you would rewrite the sequence of instructions-that is, create
+                                a new program. Von Neumann invented programming as it is known today.
+                                The model of computing proposed by Von Neumann included many other
+                                important features found on all modern computing systems, and to honor
+                                him this model of computation has come to be known as the Von Neumann
+                                architecture.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Programmer:
+            <ul><li>Now it was no longer necessary
+                                to be an electrical engineer to solve a problem on a computer. One simply
+                                needed to learn how to write commands in a high-level language. The occu    pation called programmer was born.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Integrated Circuit:
+            <ul><li>The fourth generation, roughly 1975-1985, saw the appearance of the
+                                first microcomputer. Integrated circuit technology had advanced to the
+                                point that a complete computer system could be contained on a single circuit
+                                board that you could hold in your hand.</li></ul>
+        </td></tr>
+    </table>
+
+    <table>
+        <tr><td><strong>Briefly describe these computer generations:</strong></td></tr>
+        <tr class="row-item"><td>First generation computer
+            <ul><li>The first general-purpose, electronic computers appeared
+                                during the period 1940-1946. These first computers were one-of-a-kind experimental systems
+                                that never moved outside the research laboratory. </li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Second generation computer
+            <ul><li>The second generation of computing, roughly 1957-1965, heralded a
+                                major change in the size and complexity of computers. In the late 1950s,
+                                the bulky vacuum tube was replaced by a single transistor only a few milli-
+                                meters in size, and memory was now constructed using tiny magnetic cores
+                                only 1/50th of an inch in diameter.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Third generation computer
+            <ul><li>The third generation of computing, which lasted from about 1965 to 1975. This was the era of the 
+                                integrated circuit. Rather than using discrete electronic components, integrated
+                                circuits with transistors, resistors, and capacitors were photographically etched
+                                onto a piece of silicon, which further reduced the size and cost of computers.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Fourth generation computer
+            <ul><li>The fourth generation, roughly 1975-1985, saw the appearance of the
+                                first microcomputer. Integrated circuit technology had advanced to the
+                                point that a complete computer system could be contained on a single circuit
+                                board that you could hold in your hand. The desk-sized machine of the early
+                                1970s now became a desktop machine, shrinking to the size of a typewriter.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Fifth generation computer
+            <ul><li>The fifth generation, 1985-?, is where we are today. However, so much is
+                                changing so fast that the concept of distinct generations of computer development has outlived its usefulness. In computer science, change is now a
+                                constant companion.</li></ul>
+        </td></tr>
+    </table>
+
+    <table>
+        <tr><td><strong>FORTRAN:</strong></td></tr>
+        <tr class="row-item"><td>What does the acronym FORTRAN stand for?
+            <ul><li>Formula Translation.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>When was FORTRAN developed?
+            <ul><li>FORTRAN was created in 1954 and commercially released in 1957.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>What was it used for?
+            <ul><li>It allowed engineers and scientist to streamline their work by letting them use the doftware without the need for a programmer and utlized the almighty power of automation.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Is FORTRAN still being used today? If so, what for?
+            <ul><li>Yes it is! Apparently mostly used for weather radar, atmospheric and oceanic studies, along with DNA genoming and even to help farmers with breeding chickens.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Resource - https://www.ibm.com/history/fortran</td></tr>
+    </table>
+
+    <table>
+        <tr><td><strong>COBOL:</strong></td></tr>
+        <tr class="row-item"><td>What does the acronym COBOL stand for?
+            <ul><li>Common business-oriented language.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>When was COBOL developed?
+            <ul><li>COBOL was formed in 1959.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>What was it used for?
+            <ul><li>Primarily large financial institutions due to it's extreme accuracy of decimal calculations.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Is COBOL still being used today? If so, what for?
+            <ul><li>Yes it is! It is used in over 40% of all online banking systems.</li></ul>
+        </td></tr>
+        <tr class="row-item"><td>Resource - https://www.ibm.com/think/topics/cobol</td></tr>
+    </table>
+
+</body>
+</html>
