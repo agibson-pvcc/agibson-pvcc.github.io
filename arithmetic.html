@@ -1,0 +1,48 @@
+<!-- 
+ Aaron Gibson
+ Program purpose - Simple JavaScript arithmetic
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Arithmetic</title>
+
+    <script type = "text/javascript">
+        function calculate()
+            {
+                var num1;
+                var num2;
+                var addans;
+                var subans;
+                var multans;
+                var divans;
+                var modans;
+
+            // Get data from user
+                num1 = prompt("Enter the first number:");
+                num2 = prompt("Enter the second number:");
+
+            // Perform calculations
+                addans = num1 * 1 + num2 * 1; // Make sure variables are numeric 
+                subans = num1 - num2;
+                multans = num1 * num2;
+                divans = num1 / num2;
+                modans = num1 % num2;
+
+            // Display results
+                document.write("<h2>Arithmetic Answers:</h2>");
+                document.write("Addition: " + addans + "<br>");
+                document.write("Subtraction: " + subans + "<br>");
+                document.write("Multiplication: " + multans + "<br>");
+                document.write("Division: " + divans + "<br>");
+                document.write("Modulus: " + modans + "<br>");
+            }
+    </script>
+</head> 
+<body>
+    <form>
+        <input type = "button" value = "Click here for arithmetic calculations"
+            class = "calcbutton" onclick = "calculate()" />
+    </form>
+</body>
+</html>
