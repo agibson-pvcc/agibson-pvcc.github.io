@@ -7,6 +7,7 @@
 <head>
     <title>Github Information</title>
     <style>
+
         body {
             background-color: rgb(47, 0, 58);
             color: white;
@@ -17,13 +18,20 @@
             align-items: center;       
             min-height: 100vh;        
             margin: 0;
-            padding: 20px;
+            padding: 1em;
         }
 
         h3 {
+            text-align: left;
             color: rgb(255, 64, 0);
             font-size: 2.5em;
             margin-bottom: 1em;
+        }
+
+        h4{
+            text-align: left;
+            font-size: 1.5em;
+            color: rgb(255, 64, 0);
         }
 
         ul {
@@ -33,6 +41,17 @@
             color: aquamarine;
         }
 
+        ol {
+            padding: 2em;
+            font-size: 1.5em;
+            color: aquamarine;
+        }
+        
+        ol li::marker {
+            color: yellow; 
+            font-weight: bold; 
+        }
+
         b {
             color: yellow;
         }
@@ -40,6 +59,15 @@
         img {
             width: 400px;   
         }
+
+        a {
+            color: orange;
+        }
+
+        a:visited {
+            color:yellowgreen;
+        }
+    
 
     </style>
 </head>
@@ -55,36 +83,64 @@
             are all making changes to the same files.</li>
         <br>
 
-        <li><b>Q.</b> What is GitHub?</li>
-        <li><b>A.</b> GitHub is a cloud-based platform where you can store, share, and work together with others to write code.</li>
-        <br>
-
         <li><b>Q.</b> What is Git?</li>
         <li><b>A.</b> Git is a version control system for tracking changes in code.</li>
         <br>
 
-        <li><b>Q.</b> How is GitHub different from Git?</li>
+        <li><b>Q.</b> What is GitHub?</li>
+        <li><b>A.</b> GitHub is a cloud-based platform where you can store, share, and work together with others to write code.</li>
+        <br>
+
+        <li><b>Q.</b> What is the difference between Git and Github? </li>
         <li><b>A.</b> GitHub is the hosting service to store your code but Git is the tool used for managing and tracking changes in the code AKA version control.</li>
         <br>
 
-        <li><b>Q.</b> What is a repository?</li>
-        <li><b>A.</b> A repository is similiar to a standard computer folder. It stores your files, code, and documents. </li>
+        <li><b>Q.</b> Who started Github and how was it started?</li>
+        <li><b>A.</b> GitHub was founded by Chris Wanstrath, P. J. Hyett, Tom Preston-Werner and Scott Chacon.   </li>
         <br>
 
-        <li><b>Q.</b> What is a commit?</li>
-        <li><b>A.</b> A commit is a saved change in a repository with a message describing the change made.</li>
+        <li><b>Q.</b> What company owns it now?</li>
+        <li><b>A.</b> Microsoft purchased GitHub in 2018 for $7.5 billion U.S. dollars.</li>
         <br>
 
-        <li><b>Q.</b> What is a branch?</li>
-        <li><b>A.</b> A branch is esentially a clone of the default branch or any other existing branch from the repository. It is used for testing 
-        certain ideas or features without the concern of others making any changes to it while you work on it. </li>
+        <li><b>Q.</b> How much does a GitHub account cost?</li>
+        <li><b>A.</b> GitHub is free for their basic service plan with limitations. They also offer upgraded plans that costs $4 and $21 per month. </li>
         <br>
 
-        <li style="color: yellow;">Resources:</li>
+        <li><b>Q.</b> What is the octocat?</li>
+        <li><b>A.</b> The octocat is GitHub's mascot! Created by Cameron McEfee.</li>
+        <br>
+        <br>
+    </ul>
+
+        <h4>Git / GitHub Terminology</h4>
         <ol>
-            <li>https://docs.github.com/en/get-started/start-your-journey/about-github-and-git</li>
-            <li>https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches</li>
+            <li>Repository - Is the most basic element of GitHub. Essentially just the folder that holds all of your files and documents. </li>
+            <li>Commit - Is a revision made to one of your files with a user-typed message describing the changes made. </li>
+            <li>Fork - Is a personal copy of another persons repository. Changes made to this will not effect the repository that was copied.</li>
+            <li>Push - To send your committed changes to a remote repository.</li>
+            <li>Pull Requests - Are proposed changes or ideas made by one user and peer-reviewed for acceptance or rejection. </li>
+            <li>Workflows - Is an automated process that is configurable by the user. It will perform certain actions when triggered by particular events that it is told to look out for. </li>
+            <li>Issues - Are suggested improvements made by repository collaborators. Typically a discussion thread associated with the proposals.</li>
+            <li>Raw Button - Used to view and/or copy the raw content without any styling. </li>
+            <li>Blame Button - Used to view all modifications made to a file with information detailing who made the change, 
+                what the change was,
+                 and when it was made. </li>
         </ol>
+
+    <h4>Resources:</h4>
+    <ol>
+        <li><a href="https://docs.github.com/en/get-started/start-your-journey/about-github-and-git" target="_blank">About GitHub and Git</a></li>
+        <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches" target="_blank">About Branches</a></li>
+        <li><a href="https://pslmodels.github.io/Git-Tutorial/content/background/GitHubHistory.html" target="_blank">History of GitHub</a></li>
+        <li><a href="https://www.britannica.com/technology/GitHub" target="_blank">GitHub Technology</a></li>
+        <li><a href="https://github.com/pricing" target="_blank">GitHub Plan Pricing</a></li>
+        <li><a href="https://cameronmcefee.com/work/the-octocat/" target="_blank">Cameron McEfee</a></li>
+        <li><a href="https://docs.github.com/en/get-started/learning-about-github/github-glossary?search-overlay-input=raw+button&search-overlay-ask-ai=true" target="_blank">GitHub Glossary</a></li>
+        <li><a href="https://docs.github.com/en/enterprise-cloud@latest/repositories/working-with-files/using-files/viewing-and-understanding-files" target="_blank"> GitHub Views</a></li>
+
+    </ol>
+    
     </ul>
 
 </body>
