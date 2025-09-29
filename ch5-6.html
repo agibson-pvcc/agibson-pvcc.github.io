@@ -1,0 +1,284 @@
+<!--
+Aaron Gibson
+Chapter 5-6 Program
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chapter 5 and 6</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0); 
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;        
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #111; 
+            width: calc(100% - 80px);
+            margin: 20px;             
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            counter-reset: row; 
+        }        
+
+        td {
+            color: rgb(255, 255, 255);
+            background-color: rgb(69, 0, 0);
+            border: 0.5px solid white;
+            padding: 10px 15px;
+            text-align: left;
+            vertical-align: top;
+            box-shadow: 0 0 5px white, 0 0 10px rgb(0, 0, 0);
+        }
+
+        /* Automatically number each row in the table */
+        tr.row-item td::before {
+            counter-increment: row;
+            content: counter(row) ". ";
+            display: inline-block;
+            width: 2.2em;
+            text-align: right;
+            margin-right: 8px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        ol {
+            margin: 5px 0 15px 25px;
+            padding: 0;
+        }
+
+        ul {
+            margin: 5px 0 10px 40px; 
+            padding-left: 20px;       
+        }
+        
+
+        strong {
+            font-size: 120%;
+        }
+
+        .title {
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+            font-size: 160%;
+            margin-top: 10px;
+        }
+
+        .miniTitle {
+            color: rgb(208, 255, 0);
+            font-weight: bold;
+            font-size: 100%;
+            margin-top: 10px;
+        }
+
+        .name{
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <tr><td class="title">Chapter 5: Computer Systems Orginization</td></tr>
+        <tr><td class="name">Student: Aaron Gibson</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Von Neumann computer architecture, 4 major subsystems:</td></tr>
+        <tr class="row-item"><td>Memory</td></tr>
+        <tr class="row-item"><td>Input-Output</td></tr>
+        <tr class="row-item"><td>Arithmetic Logic Unit (ALU)</td></tr>
+        <tr class="row-item"><td>Control Unit</td></tr>      
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Von Neumann computer architecture, 3 characteristics:</td></tr>
+        <tr class="row-item"><td>Four major subsystems called memory, input/output, the arithmetic/
+            logic unit (ALU), and the control unit. The ALU and the control unit are often bundled together in what is called the central processing unit or CPU.</td></tr>
+        <tr class="row-item"><td>The stored program concept, in which the instructions to be executed by
+            the computer are represented as binary values and stored in memory.</td></tr>
+        <tr class="row-item"><td>The sequential execution of instructions, in which one instruction at
+            a time is fetched from memory and passed to the control unit, where it
+            is decoded and executed.</td></tr>   
+    </table>
+
+    <table>
+        <tr><td class="miniTitle"> Computer Architecture Terms:</td></tr>
+        <tr class="row-item"><td><strong>Ram:</strong><br> Referred to as random access memory (RAM).
+            RAM has the following three characteristics:
+            Memory is divided into fixed-size units called cells, and each cell is
+            associated with a unique identifier called an address. These addresses
+            are the unsigned integers 0, 1, 2, ..  MAX.
+            All accesses to memory are to a specified address, and we must always
+            fetch or store a complete cell—that is, all the bits in that cell. The cell
+            is the minimum unit of access.
+            The time it takes to fetch or store the contents of a single cell is the
+            same for all cells in memory.</td></tr>
+        <tr class="row-item"><td><strong>Cache:</strong><br> A cache
+            is typically 5-10 times faster than RAM but much smaller—on the order of a
+            few megabytes rather than a few dozen gigabytes. This limited size is not a
+            problem because the computer does not keep all of the data there, just those
+            items that were accessed most recently and that, presumably, will be needed
+            again immediately.</td> </tr>
+        <tr class="row-item"><td><strong>Principle of locality: The high likelihood that when a program fetches a piece of data or an instruction:</strong><br>
+        <ol>
+            <li>Look first in cache memory to see whether the information is there. If it is,
+                then the computer can access it at the higher speed of the cache.</li>
+            <li>If the desired information is not in the cache, then access it from RAM at
+                the slower speed, using the fetch operation described earlier.</li>
+        </ol>
+        </td></tr> 
+        <tr class="row-item"><td><strong>ROM:</strong><br>Read-only memory (ROM) is a special type of random access memory into
+            which information has been prerecorded during manufacture. This infor-
+            mation cannot be modified or removed, only fetched. ROM is used to hold important system instructions and data in a place where a user cannot acci-
+            dentally or intentionally overwrite them.)</td></tr>
+        <tr class="row-item"><td> <strong>Memory cell size:</strong><br> A memory cell that contains exactly 8 binary digits.</td></tr> 
+        <tr class="row-item"><td> <strong>Memory cell address:</strong> <br>          
+        </td></tr>
+        <tr class="row-item"><td> <strong>Maximum memory size:</strong> <br> The range of addresses available on
+            a computer is [0 . . (2N - 1)], where N is the number of binary digits used to
+            represent an address. This is a total of 2N memory cells. The value 2N is called
+            the address space or maximum memory size of the computer.       
+        </td></tr> 
+        <tr class="row-item"><td> <strong>Register:</strong> <br> A register is a special high-speed storage cell that holds the operands
+            of an arithmetic operation and that, when the operation is complete, holds
+            its result.    
+        </td></tr>
+        <tr class="row-item"><td> <strong>Fetch:</strong> <br> Fetch a copy of the contents of the memory cell with the
+            specified address and return those contents as the result of the operation. The original contents of the memory cell that was accessed are
+            unchanged.            
+        </td></tr> 
+        <tr class="row-item"><td><strong> Store: </strong> <br> Store the specified value into the memory cell specified by
+            address. The previous contents of the cell are lost.
+        </td></tr>
+        <tr class="row-item"><td><strong> Memory access time:</strong><br>One of the characteristics of random access memory is that the time to carry
+            out either a fetch or a store operation is the same for all 2N addresses. At cur-
+            rent levels of technology, this time, called the memory access time, is typically
+            about 5-10 nanoseconds (nanosecond = 1 nsec = 10-9 seconds = 1 billionth of
+            a second). </td></tr> 
+        <tr class="row-item"><td><strong> DASD</strong> <br>A direct access storage device (DASD) is one in which requirement number
+            2, equal access time, has been eliminated. That is, in a direct access storage
+            device, every unit of information still has a unique address, but the time
+            needed to access that information depends on its physical location and the
+            current state of the device.
+            The best examples of DASDs are the types of disks listed earlier: hard
+            drives, DVDs, and so on.    
+        </td></tr>
+        <tr class="row-item"><td> <strong>Arithmetic and logic unit (ALU) : </strong> <br>The arithmetic/logic unit (ALU) is the subsystem that 
+            performs such mathematical and logical operations as addition, subtraction, and comparison for
+            equality.             
+        </td></tr> 
+        <tr class="row-item"><td><strong> Control unit:</strong> <br>It is the task of the control unit to (1) fetch from
+            memory the next instruction to be executed, (2) decode it—that is, determine
+            what is to be done, and (3) execute it by issuing the appropriate command to
+            the ALU, memory, or I/O controllers. These three steps are repeated over and
+            over until we reach the last instruction in the program.       
+        </td></tr>
+    </table>
+
+    <br><br><br>
+
+    <table>
+        <tr><td class="title">Chapter 6:</td></tr>
+        <tr><td><strong>Four things the interface between the computer and the hardware does: </strong><br>              
+        </td></tr> 
+        <tr class="row-item"><td> <br>Hides from the user the messy details of the underlying hardware.             
+        </td></tr> 
+        <tr class="row-item"><td> <br>Presents information about what is happening in a way that does not
+            require in-depth knowledge of the internal structure of the system.        
+        </td></tr>
+        <tr class="row-item"><td> <br>Allows easy user access to the resources available on this computer.             
+        </td></tr> 
+        <tr class="row-item"><td> <br>Prevents accidental or intentional damage to hardware, programs, and data.       
+        </td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Responsibilities of systems software:<br>              
+        </td></tr> 
+        <tr class="row-item"><td> <br>Hides the complex and unimportant (to the user) details of the internal
+            structure of the Von Neumann architecture.           
+        </td></tr> 
+        <tr class="row-item"><td> <br>Presents important information to the user in a way that is easy to
+            understand.         
+        </td></tr>
+        <tr class="row-item"><td> <br>Allows the user to access machine resources in a simple and efficient way.             
+        </td></tr> 
+        <tr class="row-item"><td> <br>Provides a secure and safe environment in which to operate.       
+        </td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Terms:<br>              
+        </td></tr> 
+        <tr class="row-item"><td> Systems software: System software acts as an intermediary between the users and the hardware.         
+        </td></tr> 
+        <tr class="row-item"><td> User interface: All modern operating systems provide a powerful 
+            graphical user interface (GUI) that gives the user an intuitive visual overview
+            as well as graphical control of the capabilities and services of the 
+            computer. Control of the GUI is typically done with keystrokes, mouse clicks,
+            finger taps, voice activation, or biometric scans such as fingerprints.       
+        </td></tr>
+        <tr class="row-item"><td> Language services: These programs, called assemblers, compilers, and
+            interpreters, allow you to write programs in a high-level, user-oriented
+            language rather than the machine language of Chapter 5 and to 
+            execute these programs easily and efficiently. They often include 
+            components such as text editors and debuggers.          
+        </td></tr> 
+        <tr class="row-item"><td> Memory managers: These programs allocate memory space for programs
+            and data and retrieve this memory space when it is no longer needed. 
+        </td></tr>
+        <tr class="row-item"><td> Information managers: These programs handle the organization,
+            storage, and retrieval of information on storage devices such as
+            the hard drives, DVDs, flash drives, as well as information stored remotely in data 
+            centers (cloud storage). They allow you to organize your information in an
+            efficient hierarchical manner, using directories, folders, and files and
+            to keep your personal data safe from accidental or intentional misuse.           
+        </td></tr> 
+        <tr class="row-item"><td> i/o managers: These software packages allow you to easily and 
+            efficiently use the many different types of input and output devices that
+            exist on a modern computer system.   
+        </td></tr>
+        <tr class="row-item"><td> Scheduler: This system program keeps a list of programs ready to run on
+            the processor, and it selects the one that will execute next. The scheduler
+            allows you to have several different programs active at a single time, for
+            instance, surfing the web while you are waiting for a file to finish printing.        
+        </td></tr> 
+        <tr class="row-item"><td> Utilities: These collections of library routines provide a wide range of
+            useful services either to a user or to other system routines. Text 
+            editors, online help routines, image and sound applications, and control
+            panels are examples of utility routines. Sometimes these utilities are
+            organized into collections called program libraries.  
+        </td></tr>
+        <tr class="row-item"><td> Assembly Language: A program written in assembly language is called the source program; it
+            uses the features and services provided by the language. However, the processor does not “understand” 
+            assembly language instructions, in the sense of being
+            able to fetch, decode, and execute them as described in Chapter 5. The source
+            program must be translated into a corresponding machine language program,
+            called the object program.      
+        </td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Functions of an Operating Systems:<br>              
+        </td></tr> 
+        <tr class="row-item"><td> The User Interface             
+        </td></tr> 
+        <tr class="row-item"><td> System Security and Protection     
+        </td></tr>
+        <tr class="row-item"><td> Efficient Management of Resources           
+        </td></tr> 
+        <tr class="row-item"><td> The Safe Use of Resources         
+        </td></tr>
+        <tr class="row-item"><td> Deadlock Detection and Error Detection         
+        </td></tr>
+    </table>
+
+</body>
+</html>
