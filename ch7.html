@@ -1,0 +1,260 @@
+<!--
+Aaron Gibson
+Chapter 7 Program
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chapter 7</title>
+    <style>
+        body {
+            background-color: rgb(59, 59, 59); 
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;        
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #111; 
+            width: calc(100% - 80px);
+            margin: 20px;             
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            counter-reset: row; 
+        }        
+
+        td {
+            color: rgb(0, 255, 17);
+            background-color: rgb(0, 39, 49);
+            border: 0.5px solid white;
+            padding: 10px 15px;
+            text-align: left;
+            vertical-align: top;
+            box-shadow: 0 0 5px white, 0 0 10px rgb(0, 0, 0);
+        }
+
+        /* Automatically number each row in the table */
+        tr.row-item td::before {
+            counter-increment: row;
+            content: counter(row) ". ";
+            display: inline-block;
+            width: 2.2em;
+            text-align: right;
+            margin-right: 8px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        ol {
+            margin: 5px 0 15px 25px;
+            padding: 0;
+        }
+
+        ul {
+            margin: 5px 0 10px 40px; 
+            padding-left: 20px;       
+        }
+        
+
+        strong {
+            font-size: 120%;
+        }
+
+        .title {
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+            font-size: 160%;
+            margin-top: 10px;
+        }
+
+        .miniTitle {
+            color: rgb(208, 255, 0);
+            font-weight: bold;
+            font-size: 100%;
+            margin-top: 10px;
+        }
+
+        .name{
+            color: rgb(255, 0, 0);
+        }
+
+        table {
+            margin: 30px auto;
+        }
+
+        img {
+            width:500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
+     </style>
+</head>
+<body>
+    
+    <table>
+        <tr><td class="title">Chapter 7 </td></tr>
+        <tr><td class="name">Student: Aaron Gibson</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Briefly describe or define:</td></tr>
+        <tr class="row-item"><td>Computer network - A computer network is a set of independent computer systems 
+            interconnected by telecommunication links for the purpose of sharing information
+            and resources.</td></tr>
+        <tr class="row-item"><td>Analog device (Define and give an example) - A physical
+            quantity used to represent information, usually voltage level, is continuous
+            and can take on any value. The voice-oriented dial-up telephone network was originally an analog
+            medium.</td></tr>
+        <tr class="row-item"><td>Digital device (Define and give an example) - A computer produces digital 
+            information - Specifically, a sequence of 0s and 1s. Digital devices including mobile phones, 
+            cameras, speakers, video game
+            consoles, and your automobile's sound system. </td></tr>
+        <tr class="row-item"><td>Modem - A modem which modulates, or alters, a standard analog signal 
+            called a carrier wave so that it encodes binary information. The modem modifies the physical
+            characteristics of the carrier wave, such as amplitude or frequency, so that it
+            is in one of two distinct states, one state representing 0 and the other state
+            representing 1.</td></tr>    
+        <tr class="row-item"><td>Bandwidth - A measure of the width of a frequency range.</td></tr>       
+        <tr class="row-item"><td>Ethernet - In the commercial and office environment, the most widely used 
+            broadband technology is Ethernet. Ethernet was developed in the mid-1970s by computer scientists at the 
+            Xerox PARC research center in Palo Alto, California. It was originally designed to operate at
+            10 Mbps using coaxial cable.</td></tr>
+        <tr class="row-item"><td>WLAN - In a wireless local area network (WLAN), a short-distance form
+            of wireless networking, a user transmits from his or her computer, 
+            tablet, or smartphone to a local wireless base station, often referred to as a 3
+            wireless router, access point, or hot spot, that is no more than a few 
+            hundred feet away. This base station is then connected to a traditional wired
+            network, such as a DSL or cable modem, to provide full Internet access.</td></tr>
+        <tr class="row-item"><td>IEEE 802.11 wireless network standard - One of the most widely used standards for wireless local access is Wi-Fi,
+            also referred to by its official name, the IEEE 802.11 wireless network
+            standard. Wi-Fi is used to connect a computer to the Internet when it is
+            within range (typically 150-300 feet or 45-90 meters) of a wireless base
+            station, often advertised as a Wi-Fi hot spot.</td></tr>
+        <tr class="row-item"><td>MAN - A relatively new development in wireless networking is the medium-distance
+            metropolitan area network (MAN). This is a wireless network whose
+            scope is larger than the few hundred feet of a WLAN, typically a few blocks up to an entire city. Its purpose 
+            is to provide full Internet connectivity to all
+            computers within a neighborhood or metropolitan area.</td></tr>    
+        <tr class="row-item"><td>Internet of Things - From all that we have said, you might get the idea that 
+            the Internet is solely a
+            way for computer users, that is, people, to share computing resources or data
+            in the form of text, images, or video. Although that was originally the case,
+            it is no longer true. It is now possible to place uniquely identifiable network
+            “tags” on objects as diverse as refrigerators, thermostats, automobiles, eye-
+            glasses, TVs, pets, and machine tools. Today, any living object or mechanical
+            entity with which we wish to communicate or to control is a candidate to be
+            tagged.</td></tr>   
+        <tr class="row-item"><td>LAN - A local area network (LAN) connects hardware devices such as comput-
+            ers, printers, and storage devices that are all in relatively close proximity
+            (150-300 ft/45-90 m).</td></tr>
+        <tr class="row-item"><td>Repeater - A repeater is a device that simply amplifies and forwards a signal. In
+            Figure 7.6(b), if the device connecting the two LANs is a repeater, then every
+            message on LAN1 is forwarded to LAN2, and vice versa. Thus, when two
+            Ethernet LANs are connected by a repeater, they function exactly as if they
+            were a single network.</td></tr>
+        <tr class="row-item"><td>Bridge - A bridge is a “smarter” device that has knowledge about the nodes
+            located on each separate network. It examines every message to see if it
+            should be forwarded from one network to another. For example, if node A is
+            sending a message to node B, both of which are on LAN1, then the bridge
+            does nothing with the message. However, if node A on LAN1 is sending a
+            message to node C on LAN2, then the bridge copies the message from LAN1
+            onto LAN2 so node C is able to see it and read it.</td></tr>
+        <tr class="row-item"><td>WAN - A wide area network or WAN connects devices
+            that are not in close proximity but are across town, across the country, or
+            across the ocean.</td></tr>    
+        <tr class="row-item"><td>Packet and packet switching</td></tr>   
+        <tr class="row-item"><td>ISP - A user's individual computer or a company's private network is connected to
+            the rest of the world through an Internet service provider (ISP). An ISP is
+            a business whose purpose is to provide access from a private network (such
+            as a corporate or university network) to the Internet or from an individual's
+            home computer to the Internet.</td></tr>
+        <tr class="row-item"><td>Firewall - Computer firewalls - hardware and software placed
+            at the entry points to a company's private network to protect it from unauthorized
+            access. These firewalls implement the security guidelines set up by the company,
+            guidelines such as address filtering, specifying which Internet addresses to allow
+            in and which to keep out, and service filtering, listing exactly which applications on
+            your system should or should not be accessed over the network.</td></tr>
+        <tr class="row-item"><td>Protocol - In networking, a protocol is a mutually agreed-upon set of rules,
+            conventions, and agreements for the efficient and orderly exchange of 
+            information. Even though the Internet has more than 1 billion host machines made
+            by dozens of different manufacturers and located in hundreds of countries,
+            they can all exchange messages correctly and efficiently for one simple 
+            reason: They have all agreed to use the same protocols to govern that exchange.</td></tr>
+        <tr class="row-item"><td>Cloud computing - The concept of a single large collection
+            of accessible resources whose location is not known to the user is often
+            referred to as cloud computing.</td></tr>    
+        <tr class="row-item"><td>Net neutrality - The term net neutrality means that a public information network such as
+            an Internet service provider (ISP) should treat all users, all platforms, and all
+            content equally- essentially it should be operated like the water, electric, and
+            gas companies, as publicly regulated utilities.</td></tr>    
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Briefly describe the five layers of TCP/IP (The Internet protocol hierarchy) :</td></tr>
+        <tr class="row-item"><td>Layer 1: Physical layer - The Physical layer protocols govern the exchange of binary digits (bits)
+            across a physical communication channel, such as a fiber-optic cable, copper
+            wire, or wireless radio channel. </td></tr>
+        <tr class="row-item"><td>Layer 2: Data link layer - The Data Link layer protocols are responsible for 
+            creating an error-free “message pipe,” in which messages go in one end and always
+            come out the other end correctly and in the proper sequence. </td></tr>
+        <tr class="row-item"><td>Layer 3: Network layer -  It is the job of the end-to-end Network layer 
+            protocols to deliver a message from the site where it was created to its ultimate
+            destination. To accomplish this delivery task, every node must agree to
+            use the same addressing scheme so that everyone is able to identify that
+            ultimate destination. Thus, the two critical responsibilities of the Network
+            layer are as follows:
+            - Creating a universal addressing scheme for all network nodes.
+            - Delivering messages between any two nodes in the network. </td></tr>
+        <tr class="row-item"><td>Layer 4: - Transport layer - Assigning port numbers to programs and remembering which program goes
+            with which port is a part of the Transport layer protocols. Although each
+            host computer has one IP address, it may at any instant in time have many
+            active ports. </td></tr>    
+        <tr class="row-item"><td>Layer 5: Application layer - The Application layer protocols are the rules for implementing the 
+            end-user services provided by a network, and they are built on top of the first four
+            protocol layers. </td></tr>   
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">List and briefly describe at least 3 network services and benefits:</td></tr>
+        <tr class="row-item"><td>Email (electronic mail) - Email is convenient. You can send a message whenever you want, and it
+            waits for the recipient to log on and read at his or her convenience. Email
+            is fast. A message from the United States typically arrives anywhere in the
+            world in a few seconds, even though it may have to pass through 15 or
+            20 nodes along the way.</td></tr>
+        <tr class="row-item"><td>Social Networking - The use of web-based social networks has grown to the point where they
+            are now some of the most well-known and widely used applications on the
+            Internet, and there is hardly a person who is not thoroughly familiar with
+            them and, more likely, a registered member of one or more. </td></tr>
+        <tr class="row-item"><td>Resource Sharing - Another important network service is resource 
+            sharing, the ability to share physical resources, such as a 3-D printer or massive terabyte storage device,
+            as well as logical resources, such as software and data, among multiple users.</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">IEEE Information</td></tr>
+        <tr class="row-item"><td>What does the acronym, IEEE stand for? - The Institute of Electrical and Electronics Engineers.</td></tr>
+        <tr class="row-item"><td>What is the mission and vision of IEEE? - IEEE is a global network of over 486,000 engineering 
+        and STEM professionals. Our core purpose is to foster technological 
+        innovation and excellence for the benefit of humanity. </td></tr>
+        <tr class="row-item"><td>What are the benefits of IEEE membership? - With IEEE membership, you're connected to what's next in tech. 
+        Gain access to groundbreaking research, trusted standards, and a global network of more than 486,000 engineers.
+        Your IEEE membership adapts to your needs, offering benefits for every stage of your career. Students and young professionals can 
+        access learning resources and career-boosting opportunities. Professionals at 
+        all levels can tap into a global network of experts and stay 
+        at the forefront of technological advancement. </td></tr>
+        <tr class="row-item"><td>What are the requirements for IEEE student membership, and 
+            how much does undergraduate membership cost annually for students from the USA? - 
+            Membership in IEEE is open to individuals who, by education or experience, give 
+            evidence of competence in an IEEE-designated field. It costs $32 for a student subscription.</td></tr>
+    </table>
+
+    <img src = "topologies.jpg";/>
+
+</body>
+</html>
