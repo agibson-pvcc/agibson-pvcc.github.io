@@ -1,0 +1,172 @@
+<!-- 
+ Aaron Gibson
+ Program purpose - 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tour of Rome</title>
+    <style>
+        body {
+            color: #ffd166;
+            background-color: #252b5e;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 15px;
+            text-align: center;
+            padding: 30px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: rgb(255, 140, 63);
+        }
+
+        p {
+            font-size: 1.5em;
+            padding: 20px;
+        }
+
+        img {
+            width: 700px;            
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            margin: 20px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;     
+            width: 700px;          
+            background-color: #111; 
+        }
+
+        td {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        td[colspan="3"] {
+            color: rgb(255, 136, 0);
+            text-align: center;
+        }
+
+        .button {
+            background-color: #117cad;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0e5f81;
+        }
+
+        .button:active {
+            background-color: #0c4f6b;
+        }
+        
+    </style>
+
+    <script type="text/javascript">
+        function tourrental() {
+            // rates variables
+            var airfare = 1200;
+            var pricepernight = 265.00;
+            var mealsperday = 75;
+            var busticket = 80;
+            var activities = 220;
+            var howtopay = "<br><br>Credit and debit cards accepted.";
+    
+            // get user input
+            var numnights = parseInt(prompt("Enter the number of nights you would like to stay at Hotel Farnese:"));
+            var numofguest = parseInt(prompt("Enter the number of guests that will be staying:"));
+    
+            // calculations 
+            var airfarecost = airfare * numofguest;
+            var rentalcost = numnights * pricepernight;
+            var mealcost = mealsperday * numnights * numofguest;
+            var buscost = busticket * numofguest; // 3-day pass per guest
+            var activitiescost = activities * numofguest;
+            var total = airfarecost + rentalcost + mealcost + buscost + activitiescost;
+    
+            alert("Holiday Roma Tours" +
+                "\n-------------------------------------" +
+                "\nNumber of nights: " + numnights +
+                "\nNumber of guests: " + numofguest +
+                "\n-------------------------------------" +
+                "\nAirfare: $" + airfarecost.toFixed(2) +
+                "\nHotel: $" + rentalcost.toFixed(2) +
+                "\nMeals: $" + mealcost.toFixed(2) +
+                "\nBus: $" + buscost.toFixed(2) +
+                "\nActivities: $" + activitiescost.toFixed(2) +
+                "\n-------------------------------------" +
+                "\nTotal: $" + total.toFixed(2));
+    
+                document.write("<h1>Total: " + total + "</h1>");
+        }
+    </script>
+    
+</head>
+
+<body>
+    <h1>Holiday Roma!</h1>
+    <p>Visit Rome with us! <b>Holiday Roma Tours</b> are the most exciting way to visit this ancient Italian City.
+        <br>Stay in the luxurious Hotel Farnese, enjoy fabulous meals each day, and visit Rome's most renowned sites and museums on our
+        <b>Hop On/Hop Off</b> buses. <br>Your trip will also include a night of musical theater at the <b>Teatro Sistina!</b>
+    </p>
+    <img src="rome.jpg" alt="Rome" />
+
+    <table>
+        <tr style="font-weight: bold; font-size: 120%;">
+            <td colspan="3">
+             Holiday Roma Tour Rates
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">Air:</td>
+            <td>Round trip airfare from JFK to Rome</td>
+            <td>$1200</td>
+        </tr>        
+
+        <tr>
+            <td style="font-weight: bold;">Hotel:</td>
+            <td>5 nights in 4-star hotel</td>
+            <td>$265 per night</td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold;">Meals:</td>
+            <td>Includes 5 breakfasts and 5 dinners</td>
+            <td>$75 per day</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">Bus Tour:</td>
+            <td>Hop On/Hop Off bus: 3 day pass</td>
+            <td>$80</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">Activities:</td>
+            <td>Includes 1 theater performance & museum tickets</td>
+            <td>$220</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                VAT is included. Alcoholic beverages and tips are not included.
+            </td>
+        </tr>
+    </table>
+
+    <form>
+        <input type="button" value="Click to calculate Tour Roma tour cost"
+        class="button" onclick="tourrental()" />
+    </form>
+
+</body>
+</html>
