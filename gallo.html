@@ -1,0 +1,197 @@
+<!-- 
+ Aaron Gibson
+ Program purpose - To find the prices of pizzas and subs
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallo Pizza and Sub Shop</title>
+    <style>
+        body {
+            color: black;
+            background-color: #d35f00;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 15px;
+            text-align: center;
+            padding: 30px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: rgb(255, 213, 0);
+        }
+
+        h2 {
+            color: rgb(151, 0, 0);
+        }
+
+        p {
+            font-size: 30px;;
+            padding: 20px;
+        }
+
+        img {
+            width: 100%;            
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        table {
+            color: rgb(228, 39, 39);
+            border-collapse: collapse;
+            margin: 20px auto;     
+            width: 600px;          
+            background-color: #ffe8a8; 
+        }
+
+        td {
+            font-size: 20px;
+            border: 8px solid rgb(0, 0, 0);
+            padding: 10px;
+        }
+
+        td[colspan="3"] {
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .button {
+            width: 100%;
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            font-size: 24px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color:  rgb(255, 213, 0);
+        }
+
+        .button:active {
+            background-color: #0c4f6b;
+        }
+        
+    </style>
+
+    <script type="text/javascript">
+        function pizzaorder() {
+            // Prices and tax rate constants 
+            const salestaxrate = 0.07;
+            const discountrate = .15;
+            const pricesmall = 7.99;
+            const pricemedium = 10.99;
+            const pricelarge = 13.99;
+            const pricexlarge = 17.99;
+            const dollar = new Intl.NumberFormat('en-US' ,{style: 'currency' , currency: 'USD' ,});
+            const howtopay = "\n\nCredit, Debit, and Cash accepted";
+            const line = "\n-----------------------------------";
+    
+            // Variables for calculated amounts
+                var pizzasize = "";
+                var numpizzas = 0;
+                var pizzacost = 0;
+                var discountamount = 0;
+                var salestaxamount= 0;
+                var total = 0;
+
+            // Ask user for input 
+                part1 = "What size Gallo Pizza would you like to order?";
+                part2 = "\nEnter: \n\t S for Small \n\t M for Medium \n\t L for Large \n\t X for Xlarge";
+                pizzasize = prompt(part1 + part2)
+                numpizzas = prompt("Enter the number of Gallo Pizzas you would like to order:");
+                
+            // Calculate amounts
+                if (pizzasize == "S" || pizzasize == "s") pizzacost = numpizzas * pricesmall;
+                if (pizzasize == "M" || pizzasize == "m") pizzacost = numpizzas * pricemedium;
+                if (pizzasize == "L" || pizzasize == "l") pizzacost = numpizzas * pricelarge;
+                if (pizzasize == "X" || pizzasize == "x") pizzacost = numpizzas * pricexlarge;
+
+                if (numpizzas >= 10) discountamount = pizzacost * discountrate;
+                pizzacost -= discountamount; // subtract discount from pizzacost
+                salestaxamount = pizzacost * salestaxrate;
+                total = pizzacost + salestaxamount;
+
+            // Display results
+                alert ("\nGALLO'S PIZZA & SUBS SHOP" + line + 
+                "\nNumber of pizzas: " + numpizzas +
+                "\nDiscount: " + dollar.format(discountamount) + line +
+                "\nPizza cost: " + dollar.format(pizzacost) +
+                "\nSales tax: " + dollar.format(salestaxamount) + 
+                "\nTotal: " + dollar.format(total) + howtopay);
+
+        }
+    </script>
+    
+</head>
+
+<body>
+    <h1>Gallo Pizza & Sub Shop</h1>
+    <h2>Best pizza this side of Italy!</h2>
+    <p>5600 Main Street<br>
+        Call to order: 417.330.9800<br>
+        Fast and free delivery within city limits!<br>
+        Credit, debt, cash accepted
+    </p>
+
+    <table>
+        <tr style="font-weight: bold; font-size: 120%;">
+            <td colspan="3">
+             Pizza Price List
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <img src="pizza.jpg" alt="Rome" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold;">Small</td>
+            <td>$7.99</td>
+        </tr>        
+
+        <tr>
+            <td style="font-weight: bold;">Medium</td>
+            <td>$10.99</td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold;">Large</td>
+            <td>$13.99</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">XLarge</td>
+            <td>$17.99</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">Sales tax</td>
+            <td>7%</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                Gallo pizza party: <br>
+                Order 10 or more pizzas, receive a <br>
+                15% discount!
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <form>
+                    <input type="button" value="Click here to order pizza"
+                    class="button" onclick="pizzaorder()" />
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
