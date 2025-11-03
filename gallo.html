@@ -31,7 +31,7 @@
         }
 
         img {
-            width: 100%;            
+            width: 100%;         
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
@@ -54,6 +54,13 @@
             color: rgb(0, 0, 0);
             text-align: center;
         }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;   
+            gap: 40px;                 
+            flex-wrap: wrap;           
+        }        
 
         .button {
             width: 100%;
@@ -124,6 +131,60 @@
                 "\nTotal: " + dollar.format(total) + howtopay);
 
         }
+
+        function suborder() {
+            // Prices and tax rate constants 
+            const salestaxrate = 0.07;
+            const priceitalian = 12.99;
+            const pricehamcheese = 10.99;
+            const pricecheesesteak = 12.99;
+            const pricesmokedturkey = 11.99;
+            const dollar = new Intl.NumberFormat('en-US' ,{style: 'currency' , currency: 'USD' ,});
+            const howtopay = "\n\nCredit, Debit, and Cash accepted";
+            const line = "\n-----------------------------------";
+    
+            // Variables for calculated amounts
+                var numsubs = 0;
+                var subcost = 0;
+                var salestaxamount= 0;
+                var total = 0;
+
+            // Ask user for input 
+                part1 = "1.Hot Italian Sub \n 2.Ham and Cheese Sub\n 3.Philly Cheese Steak Sub\n 4.Smoked Turkey Sub";
+                part2 = "\n\nEnter: \n ( 1 )  for Hot Italian Sub \n ( 2 ) for Ham and Cheese Sub\n ( 3 ) for Philly Cheese Steak Sub\n ( 4 ) for Smoked Turkey Sub";
+                subtype = prompt(part1 + part2)
+
+                if (subtype == "1") {
+                    numsubs = prompt("How many Hot Italian Subs would you like to order?");
+                }
+                else if (subtype == "2") {
+                    numsubs = prompt("How many Ham and Cheese Subs would you like to order?");
+                }
+                else if (subtype == "3") {
+                    numsubs = prompt("How many Philly Cheese Steak Subs would you like to order?");
+                }
+                else if (subtype == "4") {
+                    numsubs = prompt("How many Smoked Turkey Subs would you like to order?");
+                }
+                
+            // Calculate amounts
+                if (subtype == "1") subcost = numsubs * priceitalian;
+                if (subtype == "2") subcost = numsubs * pricehamcheese;
+                if (subtype == "3") subcost = numsubs * pricecheesesteak;
+                if (subtype == "4") subcost = numsubs * pricesmokedturkey;
+
+                salestaxamount = subcost * salestaxrate;
+                total = subcost + salestaxamount;
+
+            // Display results
+                alert ("\nGALLO'S PIZZA & SUBS SHOP" + line + 
+                "\nNumber of subs: " + numsubs +
+                "\nSub cost: " + dollar.format(subcost) +
+                "\nSales tax: " + dollar.format(salestaxamount) + 
+                "\nTotal: " + dollar.format(total) + howtopay);
+
+        }
+
     </script>
     
 </head>
@@ -137,6 +198,7 @@
         Credit, debt, cash accepted
     </p>
 
+    <div class="menu-container">
     <table>
         <tr style="font-weight: bold; font-size: 120%;">
             <td colspan="3">
@@ -193,5 +255,53 @@
         </tr>
     </table>
 
+    <table>
+        <tr style="font-weight: bold; font-size: 120%;">
+            <td colspan="3">
+             Sub Price List
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <img src="sub.jpg" alt="Rome" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold;">Hot Italian Sub</td>
+            <td>$12.99</td>
+        </tr>        
+
+        <tr>
+            <td style="font-weight: bold;">Ham & Cheese Sub</td>
+            <td>$10.99</td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold;">Philly Cheese Steak</td>
+            <td>$12.99</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">Smoked Turkey Sub</td>
+            <td>$11.99</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">Sales tax</td>
+            <td>7%</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <form>
+                    <input type="button" value="Click here to order subs"
+                    class="button" onclick="suborder()" />
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
