@@ -1,0 +1,298 @@
+<!--
+Aaron Gibson
+Chapter 9 & 10 Program
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chapter 9 & 10</title>
+    <style>
+        body {
+            background-color: rgb(21, 7, 45); 
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;        
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #111; 
+            width: calc(100% - 80px);
+            margin: 20px;             
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            counter-reset: row; 
+        }        
+
+        td {
+            color: rgb(255, 240, 26);
+            background-color: rgb(39, 39, 39);
+            border: 0.5px solid white;
+            padding: 10px 15px;
+            text-align: left;
+            vertical-align: top;
+            box-shadow: 0 0 5px white, 0 0 10px rgb(0, 0, 0);
+            line-height: 1.5;
+        }
+
+        tr.row-item td::before {
+            counter-increment: row;
+            content: counter(row) ". ";
+            display: inline-block;
+            width: 2.2em;
+            text-align: right;
+            margin-right: 8px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        ol {
+            margin: 5px 0 15px 25px;
+            padding: 0;
+        }
+
+        ul {
+            margin: 5px 0 10px 40px; 
+            padding-left: 20px;       
+        }
+
+        strong {
+            font-size: 120%;
+        }
+
+        .title {
+            color: rgb(0, 174, 255);
+            font-weight: bold;
+            font-size: 160%;
+            margin-top: 10px;
+        }
+
+        .miniTitle {
+            color: rgb(224, 134, 0);
+            font-weight: bold;
+            font-size: 100%;
+            margin-top: 10px;
+        }
+
+        .name {
+            color: rgb(140, 0, 255);
+        }
+
+        table {
+            margin: 30px auto;
+        }
+
+        img {
+            width: 500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .defTitle {
+            color: rgb(33, 202, 200);
+            font-weight: bold;
+        }
+
+     </style>
+</head>
+<body>
+    
+    <table>
+        <tr><td class="title">Chapter 9: Introduction to High Level Languages</td></tr>
+        <tr><td class="title">Chapter 10: Tower of Babel: Programming Languages</td></tr>
+        <tr><td class="name">Student: Aaron Gibson</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Chapter 9: Introduction to High Level Languages</td></tr>
+        <tr><td class="miniTitle">List four disadvantages of using assembly language:</td></tr>
+        <tr class="row-item"><td>The programmer must "manually" manage the movement of data items between and among memory locations and registers (although such data items can be assigned mnemonic names).</td></tr>
+        <tr class="row-item"><td>The programmer must take a microscopic view of a task, breaking it down into tiny subtasks—ADD, COMPARE, INCREMENT—that direct what is going on in individual memory locations and registers.</td></tr>
+        <tr class="row-item"><td>An assembly language program is machine specific.</td></tr>
+        <tr class="row-item"><td>Statements are not natural-language-like (although operations are given mnemonic code words as an improvement over a string of bits).</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">List four expectations programmers have for writing programs in a high-level language ("third generation" language)</td></tr>
+        <tr class="row-item"><td>The programmer need not manage the details of the movement of data items within memory or pay any attention to exactly where those items are stored.</td></tr>
+        <tr class="row-item"><td>The programmer can take a macroscopic view of tasks, thinking at a higher level of problem solving (add B and C, and call the result A). The "primitive operations" used as building blocks in algorithm construction can be larger.</td></tr>
+        <tr class="row-item"><td>Programs are portable rather than machine specific.</td></tr>
+        <tr class="row-item"><td>Programming statements are closer to natural language and use standard mathematical notation.</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Briefly describe or define:</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Object Code: </span>When we moved from machine language to assembly language, we needed a piece of system software-an assembler-to translate assembly language instructions into binary machine language instructions (object code). </td></tr>
+        <tr class="row-item"><td><span class="defTitle">Source Code: </span>High-level language instructions.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Procedural Language: </span>Procedural languages follow directly from the Von Neumann computer architecture, an architecture characterized by sequential fetch-decode-execute cycles. A random access memory stores and fetches values to and from memory cells. Thus, it makes sense to design a language whose most fundamental operations are storing and retrieving data values.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Integrated Development Enviroment (IDE): </span>Most programmers now work within an integrated development environment, or IDE. The IDE lets the programmer perform a number of tasks within the shell of a single application program, rather than having to use a separate program for each task.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Software Development Life Cycle: </span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Waterfall Model of Software Development: </span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Agile Model of Software Development: </span></td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Describe each of these components of the software development life cycle:</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Feasibility Study: </span>The feasibility study evaluates a proposed project an compares the costs and benefits of various solutions. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">Problem Specification: </span>Problem specification involves developing a clear, concise, and unambiguous statement of the exact problem the software is to solve.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Program Design: </span>The program design phase is the time to plan how it is to be done. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">Algorithm Selection: </span>Once the various sub-tasks have been identified, algorithms must be found to carry them out.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Coding: </span>Coding is the process of converting the detailed designs into computer code. If the design has been carefully developed, this should be a relatively routine job.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Debugging: </span>Debugging is the process of locating and correcting program errors, and it can be a slow and expensive operation that requires as much effort as writing the program in the first place.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Testing: </span>To ensure the program works as intended. We deploy various styles of testing to verify behavior.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Verification: </span>Program verification can be used to prove that if the input data to a program satisfies certain conditions, then, after the program has been run on this data, the output data satisfies certain other conditions. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">Documentation: </span>Program documentation is all of the written and online material that makes a program understandable. This includes internal documentation, which is part of the program code itself. Good internal documentation consists of choosing meaningful names for program identifiers, using plenty of comments to explain the code, and separating the program into short modules, each of which does one specific subtask.</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Chapter 10: Tower of Babel: Programming Languages</td></tr>
+        <tr><td class="miniTitle">Questions & Answers:</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: Why does the textbook refer to the "tower of babel" regarding computer languages?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: Why isn't there just one programming language?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: Why didn't FORTRAN use the less than symbol (<) when comparing numbers?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What was COBOL designed for?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What was the language, C, designed for?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is the difference between C and C++?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: Who or what is the language, Ada, named for and why?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is Java "applet"?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: How much does Python cost to download, install, and use?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is Microsoft.NET?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is SQL and what is it used for?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is R and what is it used for?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is Go (or Golang) and what is it used for?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is Swift and what is it used for?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Briefly describe each of the following alternative programming paradigms:</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Functional Programming: </span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Logic Programming: </span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Parallel Programming: </span></td></tr>
+    </table>
+
+    <table>
+        <tr style="font-weight: bold; font-size: 120%;">
+            <td colspan="5" style="text-align: center;">Computer Programming Language Comparisons:</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold; text-align: center;">Language</td>
+            <td style="font-weight: bold; text-align: center;">Comments</td>
+            <td style="font-weight: bold; text-align: center;">Input Statements</td>
+            <td style="font-weight: bold; text-align: center;">Increase by 1</td>
+            <td style="font-weight: bold; text-align: center;">Output Statement</td>
+        </tr>     
+
+        <tr>
+            <td style="font-weight: bold;">1.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>        
+
+        <tr>
+            <td style="font-weight: bold;">2.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td style="font-weight: bold;">3.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">4.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold;">5.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">STACK OVERFLOW</td></tr>
+        <tr><td class="miniTitle">Questions & Answers:</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is the purpose of Stack Overflow?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What is a line of code or code snippet (small chunk of code) to do this?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What should a Stack Overflow question title do?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What are the steps to writing a good Stack Overflow question?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: How many people answered the 2021 survey?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What were the top three countries where responses came from?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What was the age range of coders when they wrote their first line of code?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What were the three most popular ways of learning how to code?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: How long have most people been coding?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What percentage of coders identified as male?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: Your opinion: How can the IT community get more women in coding?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+        <tr><td><br></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Q: What were the top three programming languages?</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">A: </span></td></tr>
+    </table>    
+    
+</body>
+</html>
