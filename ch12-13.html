@@ -1,0 +1,225 @@
+<!--
+Aaron Gibson
+Chapter 12 & 13 Program
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chapter 12 & 13</title>
+    <style>
+        body {
+            background-color: rgba(44, 44, 27, 0.771); 
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;        
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #000000; 
+            width: calc(100% - 80px);
+            margin: 20px;             
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            counter-reset: row; 
+        }        
+
+        td {
+            color: rgb(0, 255, 162);
+            background-color: rgb(3, 0, 50);
+            border: 0.5px solid white;
+            padding: 10px 15px;
+            text-align: left;
+            vertical-align: top;
+            box-shadow: 0 0 5px white, 0 0 10px rgb(0, 0, 0);
+            line-height: 1.5;
+        }
+
+        tr.row-item td::before {
+            counter-increment: row;
+            content: counter(row) ". ";
+            display: inline-block;
+            width: 2.2em;
+            text-align: right;
+            margin-right: 8px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        ol {
+            margin: 5px 0 15px 25px;
+            padding: 0;
+        }
+
+        ul {
+            margin: 5px 0 10px 40px; 
+            padding-left: 20px;       
+        }
+
+        strong {
+            font-size: 120%;
+        }
+
+        .title {
+            color: rgb(255, 179, 0);
+            font-weight: bold;
+            font-size: 160%;
+            margin-top: 10px;
+        }
+
+        .miniTitle {
+            color: rgb(255, 179, 0);
+            font-weight: bold;
+            font-size: 100%;
+            margin-top: 10px;
+        }
+
+        .name {
+            color: rgb(255, 0, 0);
+        }
+
+        table {
+            margin: 30px auto;
+        }
+
+        img {
+            width: 500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .defTitle {
+            color: rgb(255, 179, 0);
+            font-weight: bold;
+        }
+
+     </style>
+</head>
+<body>
+    
+    <table>
+        <tr><td class="title">Chapter 12: Models of Computation </td></tr>
+        <tr><td class="title">Chapter 13: Simulation and Modeling</td></tr>
+        <tr><td class="name">Student: Aaron Gibson</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Chapter 12: Models of Computation</td></tr>
+        <tr class="row-item"><td><span class="defTitle">What is the purpose of a model?</span> Models are an important way of studying many physical and social phenomena. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">List four phenomena of a model:</span>  </td></tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>Captures the essence - the important properties of the real thing.</li>
+                    <li>Probably differs in scale from the real thing.</li>
+                    <li>Omits some of the details of the real thing.</li>
+                    <li>Lacks the full functionality of the real thing.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr class="row-item"><td><span class="defTitle">List four things that a computing agent should be able to do:</span></td></tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>Accept input.</li>
+                    <li>Store information in memory and retrieve it from memory.</li>
+                    <li>Take actions according to algorithm instructions; the choice of what action to take may depend on the present state of the computing agent, as
+                        well as on the input item presently being processed.</li>
+                    <li>Produce output.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr class="row-item"><td><span class="defTitle">List four characteristics of an algorithm:</span></td></tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>Be a well ordered collection.</li>
+                    <li>Consist of unambiguous and effectively computable operations.</li>
+                    <li>Halt in a finite amount of time.</li>
+                    <li>Produce a result.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr class="row-item"><td><span class="defTitle">What is the "halting problem" with regards to an uncomputable problem?</span> This is a clear and unambiguous problem known as the halting problem.
+            Does it have a Turing machine solution? Can we find one single Turing
+            machine that will solve every instance of this problem - that is, one that
+            will give us the answer "Yes, halts" or "No, never halts" for every (Turing
+            machine, initial tape) pair?
+            This is an uncomputable problem; we will show that no Turing machine
+            exists to solve this problem. Remember that we said it was not sufficient
+            to look for such a machine and fail; we actually have to prove that no
+            such machine can exist. The way to do this is to assume that such a Turing
+            machine does exist and then show that this assumption leads to an impos-
+            sible situation, so such a machine could not exist after all. This approach is
+            called a proof by contradiction.</td></tr>
+    </table>
+
+    <table>
+        <tr><td class="miniTitle">Chapter 13: Simulation and Modeling</td></tr>
+        <tr><td><span class="defTitle">Define these terms</span></td></tr>
+        <tr class="row-item"><td><span class="defTitle">Scientific method:</span> The scientific method entails observing the behavior of a system and formulating a hypothesis that tries to understand and explain that behavior.
+            We then design and carry out experiments on the system to either prove
+            or disprove the validity of our hypothesis. This is the fundamental way of
+            gaining new scientific knowledge and understanding.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">Computational model:</span> In a computer simulation, a physical system is not modeled as a small-scale replica but as a
+            set of mathematical equations and/or algorithmic procedures that capture
+            the fundamental properties and behaviors of a system. This computational
+            model is then translated into a computer program written in one of the
+            high-level languages  </td></tr>
+        <tr class="row-item"><td><span class="defTitle">Discrete event simulation:</span> In discrete event simulation, we do not model time as continuous, like the
+            falling body model in the last section, but as discrete. That is, we model the
+            behavior of a system only at an explicit and finite set of times. The moments
+            we model are those times when an event takes place, an event being any activity that changes the state of our system. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">List and desribe seven reasons to construct a simulation model:</span>  </td></tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>Existence - The system might not yet exist, so it is not possible to
+                        experiment directly on the actual system. In fact, we might be using a
+                        model to help us with the construction of the system.</li>
+                    <li>Physical realization - The system is not constructed from entities that
+                        can be represented by physical objects. For example, it may be a social
+                        system (such as welfare policies or labor practices) that can only be
+                        simulated on a computer.</li>
+                    <li>Safety - It might be too dangerous to experiment on the actual system
+                        or a physical replica. For example, you would not want to try out a
+                        new monetary policy that could economically devastate a population
+                        or build a nuclear reactor using a new and unproven technology.</li>
+                    <li>Speed of construction - It might take too much time to construct a physical
+                        model. Sometimes it is faster to design and build a computer simulation.</li>
+                    <li>Time scale - Some physical systems change too slowly or too quickly.
+                        For example, an elementary particle in a high-speed accelerator may
+                        decompose in 10215 seconds. At the other end of the time scale, some
+                        ecosystems take thousands of years to react to a modification.
+                        A simulation can easily model fractions of a second or billions of
+                        years because time is simply a parameter in an equation.</li>
+                    <li>Ethical behavior - Some physical models have serious moral and ethical consequences, perhaps the best known being the use of animals in
+                        medical research. In this case, a computational model could eliminate
+                        a great deal of suffering.</li>
+                    <li>Ease of modification - If we are not happy with the design of a physical
+                        model, we need to construct a brand-new one. In a simulation, we only
+                        need to change some numerical parameters and rerun the existing model.</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+   
+    <table>
+        <tr><td class="miniTitle">Illustris: "The Mother of ALL Computations"</td></tr>
+        <tr class="row-item"><td><span class="defTitle">What is Illustris?</span> The Illustris project is a large cosmological simulation of galaxy formation, completed in late 2013, using a state of the art numerical code and a comprehensive physical model.  </td></tr>
+        <tr class="row-item"><td><span class="defTitle">What fields of science were involved in the Illustris computational model?</span> Astrophysics.</td></tr>
+        <tr class="row-item"><td><span class="defTitle">What does Illustris simulate?</span> A large cosmological simulation of galaxy formation. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">How long did the project take?</span> Their website just states "several years". </td></tr>
+        <tr class="row-item"><td><span class="defTitle">How many years of gallactic evolution are simulated in Illustris?</span> 13.8 billion years. </td></tr>
+        <tr class="row-item"><td><span class="defTitle">Illustris was created using two supercomputers. What is a supercomputer?</span> A super computer is essentially an extremely high performance variant that utilizes parallel processing to break up the computations into a bunch of smaller pieces that can all be done simutaneously. They are designed to execute large scale projects or simulations at a very high speed. </td></tr>
+    </table>
+
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/NjSFR40SY58">
+        </iframe>
+
+</body>
+</html>
