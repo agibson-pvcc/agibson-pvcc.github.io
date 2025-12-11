@@ -1,0 +1,179 @@
+<!-- 
+ Aaron Gibson
+ Program purpose - To calculate PVCC tuition cost based off of credits being taken
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function calculatetuition()
+        {
+            //constants and varables 
+            const dollar = new Intl.NumberFormat('en-US' , {style: 'currency', currency: 'USD'});
+            var tuition_rate = 169.30;
+            var institutional_fee = 1.75;
+            var student_fee = 2.90;
+
+            var total_tuition = 0;
+            var total_instututional_fee = 0;
+            var total_student_activity_fee = 0;
+            var total_amount = 0;
+
+            //retrieve user data
+            var credits_in = document.getElementById('amount').value;
+
+            //input validation
+            if (credits_in.trim() === "")
+            {
+                alert("Please enter the amount of credits you are taking this semester");   
+                return;
+            }
+
+            var total_tuition_fee = (credits_in * tuition_rate)
+
+            document.getElementById('tuition').value = dollar.format(total_tuition_fee); 
+
+
+            var total_institutional_fee = (credits_in * institutional_fee)
+
+            document.getElementById('institutional').value = dollar.format(total_institutional_fee); 
+
+
+            var total_student_activity_fee = (credits_in * student_fee)
+
+            document.getElementById('studentfee').value = dollar.format(total_student_activity_fee); 
+            
+
+            var total_amount = (credits_in * tuition_rate) + (credits_in * institutional_fee) + (credits_in * student_fee);
+
+            document.getElementById('totalamount').value = dollar.format(total_amount);
+        }
+    </script>
+
+    <style>
+        body {background-color: rgb(79, 0, 0); font-family: arial, sans-serif;}
+
+        h2 {
+            text-align: center;
+            color: rgb(2, 0, 116);    
+        }
+
+        table {
+            width:500px;
+            color: black;
+            background-color: grey;
+            border: none;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .table-container {
+            display: flex;            
+            justify-content: center;   
+            flex-wrap: wrap;           
+        }
+        
+        input, select {
+            font-size: 1em;
+            width: 90%;
+            border: none;
+            border-bottom: 1px solid rgb(255, 10, 198);
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        td {
+            font-size: 1.25em;;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid white;
+            box-shadow: 0 0 5px rgb(191, 39, 39), 0 0 10px rgb(14, 34, 34);
+        }
+
+        input[type="button"] {
+            background-color: rgb(2, 0, 116);    
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #25ff30;  
+        }
+
+        input[type="reset"] {
+            background-color: #ff0000; 
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #ff9625;  
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr><td colspan="3"><h2>PVCC Tuition Calculator</h2></td></tr>
+            <tr>
+                <td style="color: yellow;">Tuition Rate</td>
+                <td style="color: yellow;">Institutional Fee</td>
+                <td style="color: yellow;">Student Activity Fee</td>
+            </tr>            
+            <tr>
+                <td>$169.30 per credit</td>
+                <td>$1.75 per credit</td>
+                <td>$2.90 per credit</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>Number of credits</td>
+                    <td><input type="text" id="amount" placeholder="total credits"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="button" value="Click here to calculate tuition" onclick="calculatetuition()">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="reset" style="width:120px;"></td>
+                </tr>
+            </table>
+        
+            <table>
+                <tr>
+                    <td>Tuition amount</td>
+                    <td><input type="text" id="tuition" placeholder="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>Total institutional fee</td>
+                    <td><input type="text" id="institutional" placeholder="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>Total student activity fee</td>
+                    <td><input type="text" id="studentfee" placeholder="0" readonly></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold; color:yellow;">Total Tuition cost</td>
+                    <td><input type="text" id="totalamount" placeholder="0" readonly></td>
+                </tr>
+            </table>
+        </div>
+        
+    </form>
+</body>
+</html>
